@@ -1,0 +1,98 @@
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background: #333333;
+  text-align: center;
+  color: #ffffff;
+}
+
+#navbar {
+  background-color: #f2f2f2; /* Light grey background */
+  position: fixed; /* Fixed position to float at the top */
+  top: 15px; /* 5px from the top */
+  left: 50%; /* Center the navbar */
+  transform: translateX(-50%); /* Center the navbar */
+  width: auto; /* Auto width to contain the list */
+  border-radius: 50px; /* Rounded corners for the pill shape */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  z-index: 1000; /* Make sure it's above other items */
+  padding: 10px 20px; /* Padding around the links */
+  border: 1px solid black; /* Black border around the navbar */
+}
+
+#navbar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+#navbar li {
+  padding: 0 20px;
+}
+
+#navbar a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+#navbar a:hover,
+#navbar a:focus {
+  color: #555; /* Change text color on hover/focus */
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+  padding-top: 60px; /* Adjust this value so the content starts below the navbar */
+}
+
+.showcase {
+  min-height: 400px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.showcase h1 {
+  margin-top: 100px;
+  font-size: 55px;
+  margin-bottom: 10px;
+}
+
+.showcase p {
+  font-size: 20px;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 75%;
+  margin: auto;
+}
+
+.gallery img {
+  flex: 1 0 auto;
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  margin: 10px;
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.1);
+}
+
+footer {
+  color: #ffffff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* Additional global styles for other elements as needed */
