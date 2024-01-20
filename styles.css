@@ -1,25 +1,24 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  background: #333333;
+  background: #1e1e1e;
+  color: #ccc;
   text-align: center;
-  color: #ffffff;
 }
 
 #navbar {
-  background-color: #f2f2f2; /* Light grey background */
-  position: fixed; /* Fixed position to float at the top */
-  top: 15px; /* 5px from the top */
-  left: 50%; /* Center the navbar */
-  transform: translateX(-50%); /* Center the navbar */
-  width: auto; /* Auto width to contain the list */
-  border-radius: 50px; /* Rounded corners for the pill shape */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow effect */
-  z-index: 1000; /* Make sure it's above other items */
-  padding: 10px 20px; /* Padding around the links */
-  border: 1px solid black; /* Black border around the navbar */
+  background-color: #ffffff;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  padding: 10px;
+  margin-top: 15px;
 }
 
 #navbar ul {
@@ -27,6 +26,8 @@ body {
   padding: 0;
   margin: 0;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #navbar li {
@@ -35,36 +36,51 @@ body {
 
 #navbar a {
   text-decoration: none;
-  color: black;
+  color: #333;
   font-weight: bold;
-  transition: color 0.3s; /* Smooth transition for hover effect */
+  transition: color 0.3s;
 }
 
 #navbar a:hover,
-#navbar a:focus {
-  color: #555; /* Change text color on hover/focus */
+#navbar a:focus,
+#navbar a.active {
+  color: #007bff;
 }
 
 .container {
   width: 80%;
   margin: auto;
   overflow: hidden;
-  padding-top: 60px; /* Adjust this value so the content starts below the navbar */
+  padding: 80px 0;
 }
 
+.intro,
+.background,
+aside,
 .showcase {
-  min-height: 400px;
-  text-align: center;
-  color: #ffffff;
+  background-color: #252526;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.profile-image {
+  max-width: 200px;
+  border-radius: 50%;
+  margin: 20px auto;
+  display: block;
+  border: 5px solid #007bff;
 }
 
 .showcase h1 {
-  margin-top: 100px;
+  color: #fff;
   font-size: 55px;
   margin-bottom: 10px;
 }
 
 .showcase p {
+  color: #ccc;
   font-size: 20px;
 }
 
@@ -72,8 +88,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  max-width: 75%;
-  margin: auto;
+  padding: 0;
 }
 
 .gallery img {
@@ -89,10 +104,74 @@ body {
   transform: scale(1.1);
 }
 
-footer {
-  color: #ffffff;
-  text-align: center;
-  padding: 20px 0;
+h1,
+h2 {
+  color: #fff;
 }
 
-/* Additional global styles for other elements as needed */
+p {
+  color: #ccc;
+  font-size: 18px;
+  margin: 20px 0;
+}
+
+footer {
+  background: #202122;
+  color: #ccc;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 30px;
+  border-top: 1px solid #333;
+}
+
+footer a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
+
+  #navbar {
+    width: 100%;
+    border-radius: 0;
+    top: 0;
+    margin-top: 0;
+  }
+
+  .profile-image {
+    max-width: 150px;
+  }
+
+  .gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.inline-image {
+  max-width: 100%;
+  max-height: 400px;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 20px;
+  transition: transform 0.3s;
+}
+
+.inline-image:hover {
+  transform: scale(1.1);
+}
+
+/* Additional responsive image styling */
+@media (max-width: 768px) {
+  .inline-image {
+    max-width: 90%;
+    margin: 20px auto; /* Center images on smaller screens */
+  }
+}
