@@ -57,8 +57,7 @@ h1 {
   color: #ffffff;
   background-color: #e45b00; /* Slightly darker orange for hover */
 }
-
-header,
+a header,
 footer {
   width: 100%;
   display: flex;
@@ -76,6 +75,7 @@ header {
 
 footer {
   height: 200px; /* Set desired height */
+  font-size: 1.2em;
   background-image: url("assets/clemson-paw.jpeg");
   background-size: cover;
   background-position: center;
