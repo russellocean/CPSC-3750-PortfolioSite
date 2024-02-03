@@ -4,24 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Russell Welch Projects</title>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" type="text/css" href="/src/styles.css" />
+    <script src="/src/navbar/navbar-component.js" defer></script>
   </head>
   <body>
     <header>
-      <nav id="navbar">
-        <ul>
-          <li><a href="index.html">HOME</a></li>
-          <li><a href="about.html">ABOUT ME</a></li>
-          <li><a href="projects.html" class="active">PROJECTS</a></li>
-          <li><a href="MoreCSS/GroupCSS2.html">MORE CSS PROJECT</a></li>
-          <li>
-            <a href="BasicFixedFluidHybridLayout/layout.html"
-              >FLUID HYBRID LAYOUT</a
-            >
-          </li>
-          <li><a href="mailto:russellwelch17@gmail.com">CONTACT</a></li>
-        </ul>
-      </nav>
+      <custom-navbar current-page="projects"></custom-navbar>
     </header>
     <main>
       <aside id="projects-sidebar">
@@ -40,7 +28,10 @@
         <!-- Project #7: Goldfinger MANAGE -->
         <div class="timeline-entry" id="project7">
           <h2>Goldfinger MANAGE (May 2023 - Present)</h2>
-          <img src="assets/goldfinger-manage.jpeg" alt="Goldfinger MANAGE" />
+          <img
+            src="/src/assets/goldfinger-manage.jpeg"
+            alt="Goldfinger MANAGE"
+          />
           <p>
             Since May 2023, I've been working on Goldfinger MANAGE, an internal
             application designed to enhance company-wide data management. This
@@ -53,7 +44,7 @@
         <!-- Project #6: Aidapt -->
         <div class="timeline-entry" id="project6">
           <h2>Aidapt (February 2023 - July 2023)</h2>
-          <img src="assets/aidapt.jpeg" alt="Aidapt" />
+          <img src="/src/assets/aidapt.jpeg" alt="Aidapt" />
           <p>
             From February to July 2023, I developed Aidapt, a VSCode extension
             that serves as an AI-powered coding assistant. Utilizing OpenAI's
@@ -80,7 +71,7 @@
         <div class="timeline-entry" id="project4">
           <h2>Goldfinger LED Controllers (July 2022 - January 2023)</h2>
           <img
-            src="assets/goldfinger-led.jpeg"
+            src="/src/assets/goldfinger-led.jpeg"
             alt="Goldfinger LED Controllers"
           />
           <p>
@@ -102,7 +93,10 @@
             management and UI development in a Java and Linux environment.
           </p>
 
-          <img src="assets/goldfinger-pos.jpeg" alt="Goldfinger POS System" />
+          <img
+            src="/src/assets/goldfinger-pos.jpeg"
+            alt="Goldfinger POS System"
+          />
         </div>
 
         <!-- Project #2: Voxel Terrain System -->
@@ -110,7 +104,10 @@
           <h2>
             Voxel Terrain System in Unreal Engine 4 (January - March 2021)
           </h2>
-          <img src="assets/voxel-terrain.jpeg" alt="Voxel Terrain System" />
+          <img
+            src="/src/assets/voxel-terrain.jpeg"
+            alt="Voxel Terrain System"
+          />
           <p>
             In early 2021, I worked on creating a voxel-based terrain generation
             system in Unreal Engine 4. This project involved implementing
@@ -122,7 +119,7 @@
         <!-- Project #1: Arma 3 Terrain Creation -->
         <div class="timeline-entry" id="project1">
           <h2>Arma 3 Terrain Creation (June 2017 - Sep 2019)</h2>
-          <img src="assets/arma3-terrain.jpeg" alt="Arma 3 Terrain" />
+          <img src="/src/assets/arma3-terrain.jpeg" alt="Arma 3 Terrain" />
           <p>
             From June 2017 to September 2019, I dedicated myself to creating
             terrains for Arma 3, utilizing a suite of tools including World
