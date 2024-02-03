@@ -3,22 +3,12 @@
   <head>
     <title>Clemson Tigers Fan Page</title>
     <link href="layout.css" rel="stylesheet" type="text/css" />
+    <script src="/src/navbar/navbar-component.js" defer></script>
   </head>
 
   <body>
     <header>
-      <nav id="navbar">
-        <ul>
-          <li><a href="../index.html">HOME</a></li>
-          <li><a href="../about.html">ABOUT ME</a></li>
-          <li><a href="../projects.html">PROJECTS</a></li>
-          <li><a href="../MoreCSS/GroupCSS2.html">MORE CSS PROJECT</a></li>
-          <li>
-            <a href="layout.html" class="active">Fluid Hybrid Layout</a>
-          </li>
-          <li><a href="mailto:russellwelch17@gmail.com">CONTACT</a></li>
-        </ul>
-      </nav>
+      <custom-navbar current-page="layout"></custom-navbar>
     </header>
     <div id="wrapper">
       <div id="left_side">
