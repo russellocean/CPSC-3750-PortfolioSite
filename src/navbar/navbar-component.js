@@ -9,8 +9,13 @@ class NavbarComponent extends HTMLElement {
             <li><a href="/index.html" data-page="home">HOME</a></li>
             <li><a href="/src/pages/about.html" data-page="about">ABOUT ME</a></li>
             <li><a href="/src/pages/projects.html" data-page="projects">PROJECTS</a></li>
-            <li><a href="/src/MoreCSS/GroupCSS2.html" data-page="morecss">MORE CSS PROJECT</a></li>
-            <li><a href="/src/BasicFixedFluidHybridLayout/layout.html" data-page="layout">FLUID HYBRID LAYOUT</a></li>
+            <li class="dropdown">
+              <a href="#" data-page="school-projects">SCHOOL PROJECTS</a>
+              <div class="dropdown-content">
+                <a href="/src/MoreCSS/GroupCSS2.html" data-page="morecss">MORE CSS PROJECT</a>
+                <a href="/src/BasicFixedFluidHybridLayout/layout.html" data-page="layout">FLUID HYBRID LAYOUT</a>
+              </div>
+            </li>
             <li><a href="mailto:russellwelch17@gmail.com" data-page="contact">CONTACT</a></li>
           </ul>
         </nav>
