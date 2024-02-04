@@ -218,6 +218,7 @@ body {
 .shop-item-title {
   display: block;
   width: 100%;
+  max-width: 300px;
   text-align: center;
   font-weight: bold;
   font-size: 1.5em;
@@ -231,13 +232,20 @@ body {
 
 .shop-item-details {
   display: flex;
+  flex-direction: column;
   align-items: center;
   padding: 5px;
+  max-width: 300px;
 }
 
 .shop-item-price {
   flex-grow: 1;
   color: white;
+}
+
+.shop-item p {
+  color: white;
+  max-width: 300px;
 }
 
 .shop-items {
