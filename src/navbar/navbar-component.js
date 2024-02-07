@@ -16,6 +16,7 @@ class NavbarComponent extends HTMLElement {
                 <a href="/src/BasicFixedFluidHybridLayout/layout.html" data-page="layout">FLUID HYBRID LAYOUT</a>
                 <a href="/src/JavascriptEvents/chapter04.html" data-page="javascript-events">JAVASCRIPT EVENTS</a>
                 <a href="/src/194974/index.html" data-page="mount-joy">Mt. Joy Band Store</a>
+                <a href="/src/PHPHelloWorld/helloworld.php" data-page="php-hello-world">PHP HELLO WORLD</a>
               </div>
             </li>
             <li><a href="mailto:russellwelch17@gmail.com" data-page="contact">CONTACT</a></li>
