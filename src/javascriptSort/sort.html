@@ -3,16 +3,20 @@
 <html lang="”en”">
   <head>
     <title>Array Sorting Example</title>
+    <link rel="stylesheet" type="text/css" href="/src/styles.css" />
     <script type="text/javascript" src="sort.js"></script>
+    <script src="/src/navbar/navbar-component.js" defer></script>
   </head>
+  <header>
+    <custom-navbar current-page="javascript-sort"></custom-navbar>
+  </header>
 
-  <body>
+  <body style="padding-top: 40px">
     <h1>Sorting String Arrays</h1>
     <p>
       Enter two or more names in the field below, and the sorted list of names
       will appear in the textarea.
     </p>
-
     <form name="theform">
       Name:
       <input type="text" name="newname" size="20" />
