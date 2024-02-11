@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Button Move</title>
+    <link rel="stylesheet" href="ButtonMove.css" />
+    <script src="/src/navbar/navbar-component.js" defer></script>
+  </head>
+  <header>
+    <custom-navbar current-page="button-move"></custom-navbar>
+  </header>
+  <body>
+    <div class="controls">
+      <select id="colorSelect">
+        <option value="Red">Red</option>
+        <option value="Green">Green</option>
+        <option value="Blue">Blue</option>
+        <option value="Yellow">Yellow</option>
+        <option value="White">White</option>
+      </select>
+      <button id="makeButton">Make Button</button>
+      <button id="moveButton">Move</button>
+      <div id="totalClicked">Total: 0</div>
+    </div>
+    <div id="viewingArea"></div>
+    <script src="ButtonMove.js"></script>
+  </body>
+</html>
