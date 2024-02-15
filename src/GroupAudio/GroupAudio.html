@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 6 Group Assignment: Events</title>
+    <script src="/src/navbar/navbar-component.js" defer></script>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <header>
+    <custom-navbar current-page="group-audio"></custom-navbar>
+  </header>
+  <body>
+    <!-- Audio element -->
+    <audio id="audio" controls>
+      <source src="/src/GroupAudio/horse_sound.mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- Labels showing all audio stats -->
+    <p id="audioLength">Audio Length: 0</p>
+    <p id="audioCurrentTime">Audio Current Time: 0</p>
+    <p id="audioVolume">Audio Volume: 0</p>
+    <p id="audioPaused">Audio Paused: false</p>
+    <p id="audioDurationPlayed">Furthest Point Listened: 0</p>
+    <script>
+      // Audio element
+      const audio = document.getElementById("audio");
+
+      // Labels showing all audio stats
+      const audioLength = document.getElementById("audioLength");
+      const audioCurrentTime = document.getElementById("audioCurrentTime");
+      const audioVolume = document.getElementById("audioVolume");
+      const audioPaused = document.getElementById("audioPaused");
+      const audioDurationPlayed = document.getElementById(
+        "audioDurationPlayed"
+      );
+      // Function to format audio stats
+      const formatAudioStats = () => {
+        audioLength.textContent = `Audio Length: ${audio.duration.toFixed(
+          2
+        )} seconds`;
+        audioCurrentTime.textContent = `Audio Current Time: ${audio.currentTime.toFixed(
+          2
+        )} seconds`;
+        audioVolume.textContent = `Audio Volume: ${(audio.volume * 100).toFixed(
+          0
+        )}%`;
+        audioPaused.textContent = `Audio Paused: ${
+          audio.paused ? "Yes" : "No"
+        }`;
+        audioDurationPlayed.textContent = `Furthest Point Listened: ${audio.played
+          .end(0)
+          .toFixed(2)} seconds`;
+      };
+
+      // Event listeners to update audio stats
+      audio.addEventListener("loadedmetadata", formatAudioStats);
+      audio.addEventListener("timeupdate", formatAudioStats);
+      audio.addEventListener("volumechange", formatAudioStats);
+      audio.addEventListener("pause", formatAudioStats);
+      audio.addEventListener("play", formatAudioStats);
+    </script>
+  </body>
+</html>
