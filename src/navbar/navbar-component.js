@@ -19,6 +19,7 @@ class NavbarComponent extends HTMLElement {
                 <a href="/src/PHPHelloWorld/helloworld.php" data-page="php-hello-world">PHP HELLO WORLD</a>
                 <a href="/src/JavascriptSort/sort.html" data-page="javascript-sort">JAVASCRIPT SORT</a>
                 <a href="/src/MovingButtons/ButtonMove.html" data-page="button-move">MOVING BUTTONS</a>
+                <a href="/src/GroupEvents/GroupEvents.html" data-page="group-events">GROUP - EVENTS</a>
               </div>
             </li>
             <li><a href="mailto:russellwelch17@gmail.com" data-page="contact">CONTACT</a></li>
