@@ -21,6 +21,7 @@ class NavbarComponent extends HTMLElement {
                 <a href="/src/MovingButtons/ButtonMove.html" data-page="button-move">MOVING BUTTONS</a>
                 <a href="/src/GroupEvents/GroupEvents.html" data-page="group-events">GROUP - EVENTS</a>
                 <a href="/src/GroupAudio/GroupAudio.html" data-page="group-audio">GROUP - AUDIO</a>
+                <a href="/src/CardObject/CardObject.html" data-page="card-object">CARD OBJECTS</a>
               </div>
             </li>
             <li><a href="mailto:russellwelch17@gmail.com" data-page="contact">CONTACT</a></li>
