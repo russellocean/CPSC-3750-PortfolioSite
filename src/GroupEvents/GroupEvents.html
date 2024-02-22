@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week 6 Group Assignment: Events</title>
+    <script src="/src/navbar/navbar-component.js" defer></script>
+    <style>
+      body {
+        background-color: #474747;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        padding: 5px;
+      }
+      .startAnimation {
+        animation: rotation 1s linear;
+      }
+
+      @keyframes rotation {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <header>
+    <custom-navbar current-page="group-events"></custom-navbar>
+  </header>
+  <body>
+    <!-- Treat Label  -->
+    <p id="treatLabel">Total Treats: 0</p>
+
+    <!-- Button that increases treat label -->
+    <button id="increaseButton">Feed the cat a treat</button>
+
+    <!-- Image that bounces around the screen  -->
+    <img
+      id="catImage"
+      src="/src/GroupEvents/cat_caviar.jpg"
+      alt="A real fancy fella"
+      draggable="true"
+    />
+
+    <p>Please don't drag me!</p>
+
+    <!-- Input to talk to the cat -->
+    <input
+      type="text"
+      id="catTalk"
+      placeholder="What do you want to say to the cat?"
+    />
+
+    <script>
+      // Counter label
+      const treatLabel = document.getElementById("treatLabel");
+      let treats = 0;
+
+      // Cat image
+      const catImage = document.getElementById("catImage");
+
+      // Increase button
+      const increaseButton = document.getElementById("increaseButton");
+      increaseButton.addEventListener("click", () => {
+        treats++;
+        treatLabel.innerText = `Total Treats: ${treats}`;
+        catImage.classList.add("startAnimation");
+      });
+
+      catImage.addEventListener("animationend", () => {
+        catImage.classList.remove("startAnimation");
+      });
+
+      catImage.addEventListener("dragstart", () => {
+        // Alert the user that the cat is being dragged
+        alert("Stop dragging me!");
+      });
+
+      const catTalk = document.getElementById("catTalk");
+      catTalk.addEventListener("focus", () => {
+        catTalk.style.backgroundColor = "lightblue";
+      });
+      catTalk.addEventListener("blur", () => {
+        catTalk.style.backgroundColor = "white";
+      });
+
+      catTalk.addEventListener("input", () => {
+        // Add a new p that says meow
+        const newP = document.createElement("p");
+        newP.innerText = "Meow";
+        document.body.appendChild(newP);
+      });
+    </script>
+  </body>
+</html>

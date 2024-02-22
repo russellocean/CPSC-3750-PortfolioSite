@@ -17,6 +17,11 @@ class NavbarComponent extends HTMLElement {
                 <a href="/src/JavascriptEvents/chapter04.html" data-page="javascript-events">JAVASCRIPT EVENTS</a>
                 <a href="/src/194974/index.html" data-page="mount-joy">Mt. Joy Band Store</a>
                 <a href="/src/PHPHelloWorld/helloworld.php" data-page="php-hello-world">PHP HELLO WORLD</a>
+                <a href="/src/JavascriptSort/sort.html" data-page="javascript-sort">JAVASCRIPT SORT</a>
+                <a href="/src/MovingButtons/ButtonMove.html" data-page="button-move">MOVING BUTTONS</a>
+                <a href="/src/GroupEvents/GroupEvents.html" data-page="group-events">GROUP - EVENTS</a>
+                <a href="/src/GroupAudio/GroupAudio.html" data-page="group-audio">GROUP - AUDIO</a>
+                <a href="/src/CardObject/CardObject.html" data-page="card-object">CARD OBJECTS</a>
                 <a href="/src/Prime/prime.html" data-page="prime">PRIME CHECKER</a>
               </div>
             </li>
