@@ -1,0 +1,93 @@
+#primeList,
+#nonPrimeList {
+  float: left;
+  width: 45%;
+  padding: 20px;
+  margin: 2.5%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+#primeList {
+  background-color: #98fb98;
+}
+
+#nonPrimeList {
+  background-color: #ffb6c1;
+}
+
+/* Change color every 5 seconds */
+@keyframes colorChange {
+  0% {
+    background-color: #98fb98;
+  }
+  50% {
+    background-color: #ffb6c1;
+  }
+  100% {
+    background-color: #98fb98;
+  }
+}
+
+#primeList {
+  animation: colorChange 5s infinite;
+}
+
+@keyframes colorChangeNonPrime {
+  0% {
+    background-color: #ffb6c1;
+  }
+  50% {
+    background-color: #98fb98;
+  }
+  100% {
+    background-color: #ffb6c1;
+  }
+}
+
+#nonPrimeList {
+  animation: colorChangeNonPrime 5s infinite;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+input[type="number"] {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+/* Centering the input container */
+.input-container {
+  text-align: center;
+  padding-top: 80px;
+  margin-bottom: 20px;
+}
+
+/* Styling for lists container to display lists side by side */
+.lists-container {
+  display: flex;
+  justify-content: space-between;
+}

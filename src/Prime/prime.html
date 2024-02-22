@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prime Checker</title>
+    <link rel="stylesheet" href="prime.css" />
+    <script src="/src/navbar/navbar-component.js" defer></script>
+  </head>
+  <header>
+    <custom-navbar current-page="prime"></custom-navbar>
+  </header>
+  <body>
+    <div id="app" class="container">
+      <div class="input-container">
+        <input type="number" id="numberInput" placeholder="Enter a number..." />
+        <button id="startButton">START</button>
+      </div>
+      <div class="lists-container">
+        <div id="primeList" class="list">
+          <h2>Prime Numbers</h2>
+          <ul id="primes"></ul>
+          <button id="sumPrimes">SUM</button>
+        </div>
+        <div id="nonPrimeList" class="list">
+          <h2>Non-Prime Numbers</h2>
+          <ul id="nonPrimes"></ul>
+          <button id="sumNonPrimes">SUM</button>
+        </div>
+      </div>
+    </div>
+    <script src="prime.js"></script>
+  </body>
+</html>
