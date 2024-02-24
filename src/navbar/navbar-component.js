@@ -23,6 +23,7 @@ class NavbarComponent extends HTMLElement {
                 <a href="/src/GroupAudio/GroupAudio.html" data-page="group-audio">GROUP - AUDIO</a>
                 <a href="/src/CardObject/CardObject.html" data-page="card-object">CARD OBJECTS</a>
                 <a href="/src/Prime/prime.html" data-page="prime">PRIME CHECKER</a>
+                <a href="/src/Keypress/keypress.html" data-page="keypress">KEY PRESS DEMO</a>
               </div>
             </li>
             <li><a href="mailto:russellwelch17@gmail.com" data-page="contact">CONTACT</a></li>

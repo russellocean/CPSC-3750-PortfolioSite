@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Displaying Keypresses</title>
+    <script src="/src/navbar/navbar-component.js" defer></script>
+    <script type="text/javascript">
+      function displayKey(e) {
+        const keyCode = e.keyCode || e.which;
+        let character = String.fromCharCode(keyCode).toLowerCase();
+        const vowels = ["a", "e", "i", "o", "u"];
+
+        if (vowels.includes(character)) {
+          character = character.toUpperCase();
+        } else if (character === "r") {
+          document.body.style.backgroundColor = "red";
+          document.body.style.color = "white";
+        } else if (character === "g") {
+          document.body.style.backgroundColor = "green";
+          document.body.style.color = "white";
+        } else if (character === "b") {
+          document.body.style.backgroundColor = "blue";
+          document.body.style.color = "white";
+        }
+
+        const keysParagraph = document.getElementById("keys");
+        keysParagraph.innerHTML += character;
+      }
+    </script>
+  </head>
+
+  <header>
+    <custom-navbar current-page="keypress"></custom-navbar>
+  </header>
+
+  <body onkeypress="displayKey(event)">
+    <h1>Displaying Typed Characters</h1>
+    <p>
+      This document includes a simple script that displays the keys you type as
+      a new paragraph below. Type a few keys to try it. Also, try typing the
+      letters "r", "g", and "b" to change the background color of the page.
+    </p>
+    <div id="keys"></div>
+  </body>
+</html>
