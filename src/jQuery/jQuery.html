@@ -1,11 +1,63 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
     <script src="/src/navbar/navbar-component.js" defer></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js
-Links to an external site."></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
-      $(document).ready(function () {});
+      $(document).ready(function () {
+        $("div")
+          .mouseenter(function () {
+            $(this).css("background-color", "yellow");
+          })
+          .mouseleave(function () {
+            $(this).css("background-color", "white");
+          });
+
+        $("#fadeDiv1").click(function () {
+          $("#div1").fadeOut();
+        });
+
+        $("#fadeDiv2").click(function () {
+          $("#div2").fadeOut();
+        });
+
+        $("#fadeDiv3").click(function () {
+          $("#div3").fadeOut();
+        });
+
+        $("#datepicker").datepicker();
+
+        $("#accordion").accordion();
+
+        let progressTimer,
+          progressbar = $("#progressbar"),
+          progressLabel = $(".progress-label"),
+          updateProgress = function () {
+            let val = progressbar.progressbar("value") || 0;
+            progressbar.progressbar("value", val + 1);
+            if (val < 99) {
+              progressTimer = setTimeout(updateProgress, 200);
+            }
+          };
+
+        progressbar.progressbar({
+          value: false,
+          change: function () {
+            progressLabel.text(progressbar.progressbar("value") + "%");
+          },
+          complete: function () {
+            progressLabel.text("Complete!");
+            clearTimeout(progressTimer);
+          },
+        });
+
+        setTimeout(updateProgress, 2000);
+      });
     </script>
   </head>
 
@@ -18,21 +70,45 @@ Links to an external site."></script>
 
     <p>This is a paragraph.</p>
 
-    <div style="border: 1px solid black">
+    <button id="fadeDiv1">Fade Div 1</button>
+    <button id="fadeDiv2">Fade Div 2</button>
+    <button id="fadeDiv3">Fade Div 3</button>
+
+    <div id="div1" style="border: 1px solid black">
       <p>A paragraph in a div.</p>
       <p>Another paragraph in a div.</p>
     </div>
     <br />
 
-    <div style="border: 1px solid black">
+    <div id="div2" style="border: 1px solid black">
       <p>A paragraph in another div.</p>
       <p>Another paragraph in another div.</p>
     </div>
     <br />
 
-    <div style="border: 1px solid black">
+    <div id="div3" style="border: 1px solid black">
       <p>A paragraph in another div.</p>
       <p>Another paragraph in another div.</p>
     </div>
+    <br />
+
+    <p>Date: <input type="text" id="datepicker" /></p>
+
+    <div id="accordion">
+      <h3>Section 1</h3>
+      <div>
+        <p>Section 1 Content.</p>
+      </div>
+      <h3>Section 2</h3>
+      <div>
+        <p>Section 2 Content.</p>
+      </div>
+      <h3>Section 3</h3>
+      <div>
+        <p>Section 3 Content.</p>
+      </div>
+    </div>
+
+    <div id="progressbar"><div class="progress-label">Loading...</div></div>
   </body>
 </html>
