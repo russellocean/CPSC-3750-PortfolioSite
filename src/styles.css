@@ -268,9 +268,39 @@ footer a:hover {
 }
 
 #home-hero p {
-  margin: 0px 150px 0px 0px;
+  margin: 0px 150px 150px 0px;
   line-height: 60px;
   font-size: 48px;
+  display: block;
+  text-align: left;
+  font-weight: 100;
+}
+
+#about-me {
+  padding: 100px 0px 0px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  text-align: left;
+}
+
+#about-me img {
+  max-width: 100%;
+  max-height: 400px;
+  border-radius: 10px;
+  margin-top: 20px;
+  transition: transform 0.3s;
+}
+
+#about-me img:hover {
+  transform: scale(1.1);
+}
+
+#about-me p {
+  margin: 0px 150px 150px 0px;
+  line-height: 60px;
+  font-size: 36px;
   display: block;
   text-align: left;
   font-weight: 100;
