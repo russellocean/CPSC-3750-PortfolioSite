@@ -35,11 +35,26 @@ class NavbarComponent extends HTMLElement {
   }
 
   connectedCallback() {
-    const currentPage = this.getAttribute("current-page");
-    this.shadowRoot.querySelectorAll("a").forEach((link) => {
-      if (link.dataset.page === currentPage) {
-        link.classList.add("active");
-      }
+    window.addEventListener("DOMContentLoaded", (event) => {
+      document.body.classList.add("page-loaded");
+      const currentPage = this.getAttribute("current-page");
+      this.shadowRoot.querySelectorAll("a").forEach((link) => {
+        if (link.dataset.page === currentPage) {
+          link.classList.add("active");
+        }
+      });
+      this.shadowRoot
+        .querySelector(".dropdown")
+        .addEventListener("mouseover", () => {
+          this.shadowRoot.querySelector(".dropdown-content").style.display =
+            "block";
+        });
+      this.shadowRoot
+        .querySelector(".dropdown")
+        .addEventListener("mouseout", () => {
+          this.shadowRoot.querySelector(".dropdown-content").style.display =
+            "none";
+        });
     });
   }
 }
