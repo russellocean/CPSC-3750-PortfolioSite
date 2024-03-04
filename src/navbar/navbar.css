@@ -14,31 +14,31 @@
 }
 
 #navbar li {
-  padding: 0 20px;
+  padding: 0 2px;
 }
 
-#navbar a {
+a {
   text-decoration: none;
   color: white;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: inherit; /* Utilize the body's font-family */
+  font-size: small;
+  padding: 8px 16px; /* Add some padding to the links */
+  border-radius: 4px; /* Rounded corners */
+  transition: background-color 0.3s ease, padding 0.3s ease; /* Smooth transition for hover effect */
+}
+
+a:hover {
+  background-color: #333; /* Dark background for hover */
+  color: #c5e1ff; /* Lighter color for text on hover */
 }
 
 #navbar .dropdown-content {
   display: none;
   position: absolute;
-  background-color: grey;
-}
-
-#navbar .dropdown:hover .dropdown-content {
-  display: block;
-}
-
-@media (max-width: 768px) {
-  #navbar {
-    width: 100%;
-    border-radius: 0;
-    top: 0;
-  }
+  background-color: #252526; /* Dark background for dropdown */
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); /* Add some shadow */
+  padding: 12px 16px;
+  z-index: 1; /* Ensure dropdown content is on top */
 }
 
 #name {
@@ -46,4 +46,12 @@
   color: white;
   text-decoration: none;
   padding: 0 20px;
+  transition: all 0.3s ease;
+  background-color: transparent;
+}
+
+#name:hover {
+  transform: scale(1.1);
+  color: #c5e1ff;
+  background-color: transparent;
 }
