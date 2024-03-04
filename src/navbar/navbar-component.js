@@ -5,31 +5,32 @@ class NavbarComponent extends HTMLElement {
     this.shadowRoot.innerHTML = `
     <link rel="stylesheet" href="/src/navbar/navbar.css">
     <nav id="navbar">
-          <ul>
-            <li><a href="/index.html" data-page="home">HOME</a></li>
-            <li><a href="/src/pages/about.html" data-page="about">ABOUT ME</a></li>
-            <li><a href="/src/pages/projects.html" data-page="projects">PROJECTS</a></li>
-            <li class="dropdown">
-              <a href="#" data-page="school-projects">SCHOOL PROJECTS</a>
-              <div class="dropdown-content">
-                <a href="/src/MoreCSS/GroupCSS2.html" data-page="morecss">MORE CSS PROJECT</a>
-                <a href="/src/BasicFixedFluidHybridLayout/layout.html" data-page="layout">FLUID HYBRID LAYOUT</a>
-                <a href="/src/JavascriptEvents/chapter04.html" data-page="javascript-events">JAVASCRIPT EVENTS</a>
-                <a href="/src/194974/index.html" data-page="mount-joy">Mt. Joy Band Store</a>
-                <a href="/src/PHPHelloWorld/helloworld.php" data-page="php-hello-world">PHP HELLO WORLD</a>
-                <a href="/src/JavascriptSort/sort.html" data-page="javascript-sort">JAVASCRIPT SORT</a>
-                <a href="/src/MovingButtons/ButtonMove.html" data-page="button-move">MOVING BUTTONS</a>
-                <a href="/src/GroupEvents/GroupEvents.html" data-page="group-events">GROUP - EVENTS</a>
-                <a href="/src/GroupAudio/GroupAudio.html" data-page="group-audio">GROUP - AUDIO</a>
-                <a href="/src/CardObject/CardObject.html" data-page="card-object">CARD OBJECTS</a>
-                <a href="/src/Prime/prime.html" data-page="prime">PRIME CHECKER</a>
-                <a href="/src/Keypress/Keypress.html" data-page="keypress">KEY PRESS DEMO</a>
-                <a href="/src/jQuery/jQuery.html" data-page="jquery">JQUERY DEMO</a>
-              </div>
-            </li>
-            <li><a href="mailto:russellwelch17@gmail.com" data-page="contact">CONTACT</a></li>
-          </ul>
-        </nav>
+      <a href="/index.html" id="name">Russell Welch</a>
+        <ul>
+          <li><a href="/index.html" data-page="home">Home</a></li>
+          <li><a href="/src/pages/about.html" data-page="about">About Me</a></li>
+          <li><a href="/src/pages/projects.html" data-page="projects">Projects</a></li>
+          <li class="dropdown">
+            <a href="#" data-page="school-projects">School Projects</a>
+            <div class="dropdown-content">
+              <a href="/src/MoreCSS/GroupCSS2.html" data-page="morecss">More CSS Project</a>
+              <a href="/src/BasicFixedFluidHybridLayout/layout.html" data-page="layout">Fluid Hybrid Layout</a>
+              <a href="/src/JavascriptEvents/chapter04.html" data-page="javascript-events">Javascript Events</a>
+              <a href="/src/194974/index.html" data-page="mount-joy">Mt. Joy Band Store</a>
+              <a href="/src/PHPHelloWorld/helloworld.php" data-page="php-hello-world">PHP Hello World</a>
+              <a href="/src/JavascriptSort/sort.html" data-page="javascript-sort">Javascript Sort</a>
+              <a href="/src/MovingButtons/ButtonMove.html" data-page="button-move">Moving Buttons</a>
+              <a href="/src/GroupEvents/GroupEvents.html" data-page="group-events">Group - Events</a>
+              <a href="/src/GroupAudio/GroupAudio.html" data-page="group-audio">Group - Audio</a>
+              <a href="/src/CardObject/CardObject.html" data-page="card-object">Card Objects</a>
+              <a href="/src/Prime/prime.html" data-page="prime">Prime Checker</a>
+              <a href="/src/Keypress/Keypress.html" data-page="keypress">Key Press Demo</a>
+              <a href="/src/jQuery/jQuery.html" data-page="jquery">jQuery Demo</a>
+            </div>
+          </li>
+          <li><a href="mailto:russellwelch17@gmail.com" data-page="contact">Contact</a></li>
+        </ul>
+      </nav>
       `;
   }
 
