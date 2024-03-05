@@ -156,9 +156,9 @@ footer a:hover {
 #projects-sidebar {
   position: fixed;
   left: 0;
-  top: 0;
+  top: 50;
   width: 200px;
-  height: 100vh;
+  height: 85vh;
   background-color: #333;
   color: white;
   padding: 20px;
