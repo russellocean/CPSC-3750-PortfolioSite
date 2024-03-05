@@ -24,6 +24,10 @@ main {
   padding: 80px 0;
 }
 
+.container h1 {
+  text-align: center;
+}
+
 .intro,
 .background,
 aside,
@@ -131,7 +135,8 @@ footer a:hover {
   max-height: 400px;
   height: auto;
   border-radius: 10px;
-  margin-top: 20px;
+  margin: 20px auto;
+  display: block;
   transition: transform 0.3s;
 }
 
@@ -298,7 +303,7 @@ footer a:hover {
 }
 
 #about-me p {
-  margin: 0px 150px 150px 0px;
+  margin: 10px 150px 150px 0px;
   line-height: 60px;
   font-size: 36px;
   display: block;
