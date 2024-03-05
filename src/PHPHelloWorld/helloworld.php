@@ -3,6 +3,7 @@
 <head>
     <title>PHP Test</title>
     <script src="/src/navbar/navbar-component.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="/src/styles.css" />
 </head>
 <body>
     <header>
