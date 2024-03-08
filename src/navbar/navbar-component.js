@@ -26,6 +26,7 @@ class NavbarComponent extends HTMLElement {
               <a href="/src/Prime/prime.html" data-page="prime">Prime Checker</a>
               <a href="/src/Keypress/Keypress.html" data-page="keypress">Key Press Demo</a>
               <a href="/src/jQuery/jQuery.html" data-page="jquery">jQuery Demo</a>
+              <a href="/src/hangman/hangman.html" data-page="hangman">Hangman</a>
             </div>
           </li>
           <li><a href="mailto:russellwelch17@gmail.com" data-page="contact">Contact</a></li>
