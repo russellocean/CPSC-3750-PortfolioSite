@@ -7,13 +7,15 @@ let maxStrikes = 12;
 
 function startGame() {
   totalStrikes = 0;
+  // Remove any existing event listeners to prevent duplication
+  cheatModeCheckbox.removeEventListener("click", toggleCheatMode);
   // Fetch a new word from the server
   fetch("getWord.php")
     .then((response) => response.json())
     .then((data) => {
       if (data.word) {
         currentWord = data.word;
-        cheatModeCheckbox.addEventListener("click", () => toggleCheatMode());
+        cheatModeCheckbox.addEventListener("click", toggleCheatMode);
         setupGame();
       } else {
         console.error("Error fetching word:", data.error);
@@ -28,7 +30,6 @@ function toggleCheatMode() {
     alert(`The word is: ${currentWord}`);
   }
 }
-
 function setupGame() {
   wordToGuessElement.innerHTML = "_ ".repeat(currentWord.length).trim();
   generateLetterButtons();
@@ -60,8 +61,14 @@ function guessLetter(letter) {
       found = true;
     }
   }
+
   // Update the word to guess element with the new text content
   wordToGuessElement.textContent = textContentArray.join("");
+
+  if (!textContentArray.includes("_")) {
+    alert("You win!");
+    startGame();
+  }
 
   // If the letter was not found, increment the total strikes
   if (!found) {
