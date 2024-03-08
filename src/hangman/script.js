@@ -67,6 +67,8 @@ function guessLetter(letter) {
 
   if (!textContentArray.includes("_")) {
     alert("You win!");
+    document.getElementById("hangman").style.objectPosition = `0 0`;
+    document.getElementById("hangman").style.objectFit = "none";
     startGame();
   }
 
