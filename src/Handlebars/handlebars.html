@@ -18,6 +18,30 @@
 
     <div id="animal-info"></div>
 
+    <script id="animalTemplate" type="text/x-handlebars-template">
+      {{#each animals}}
+        <div class="animal">
+          <h2>{{name}}</h2>
+          <p>Species: {{species}}</p>
+          <p>Likes:
+            <ul>
+              {{#each foods.likes}}
+                <li>{{this}}</li>
+              {{/each}}
+            </ul>
+          </p>
+          <p>Dislikes:
+            <ul>
+              {{#each foods.dislikes}}
+                <li>{{this}}</li>
+              {{/each}}
+            </ul>
+          </p>
+        </div>
+      {{/each}}
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     <script src="handlebars.js"></script>
   </body>
 </html>

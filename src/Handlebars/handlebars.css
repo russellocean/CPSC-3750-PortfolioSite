@@ -58,3 +58,32 @@ p {
   list-style: none;
   margin: 0;
 }
+/* Enhanced styling for animal information */
+.animal {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 25px 100px;
+  border-radius: 8px;
+}
+
+.animal h2 {
+  color: #333;
+}
+
+.animal p {
+  color: #666;
+}
+
+.animal ul {
+  list-style-type: none;
+  padding: 0 20px;
+}
+
+.animal li {
+  padding: 2px 0;
+}
+
+.animal li:hover {
+  background-color: #e9e9e9;
+}
