@@ -1,0 +1,48 @@
+/* Modern and sleek podcast-style styling for AudioChanger.html */
+button {
+  background-color: #1a1a1d;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #6f2232;
+}
+
+div {
+  margin: 20px;
+  padding: 20px;
+  background-color: #4e4e50;
+  color: #ffffff;
+}
+
+span {
+  color: #9d9d9d;
+  padding: 5px;
+}
+
+/* Customizing text, spacing, positioning, and layout for a sleek look */
+.text {
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.audio-player {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Note: Font and body background color are not modified as per instructions */

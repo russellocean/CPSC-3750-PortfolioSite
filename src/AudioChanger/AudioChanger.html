@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audio Changer</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+    <link rel="stylesheet" href="AudioChanger.css" />
+    <script src="/src/navbar/navbar-component.js" defer></script>
+  </head>
+
+  <header>
+    <custom-navbar current-page="audio-changer"></custom-navbar>
+  </header>
+
+  <body>
+    <div class="container">
+      <div id="audioApp" class="audio-app">
+        <h1 id="audioFileName" class="audio-title">
+          Arnold Schwarzenegger Podcast
+        </h1>
+        <div id="playlist" class="playlist"></div>
+        <div class="audio-player-container">
+          <audio id="audioPlayer" preload="auto">
+            <source src="assets/arnold_podcast.wav" type="audio/wav" />
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+        <div id="controls" class="controls">
+          <button id="rewind" class="control-btn">Rewind 5s</button>
+          <button id="forward" class="control-btn">Forward 5s</button>
+          <button id="togglePlay" class="control-btn">Play/Pause</button>
+          <span id="currentTime" class="current-time">00:00</span>
+        </div>
+        <div id="advancedControls" class="advanced-controls">
+          <button id="addTitle" class="control-btn">Add Title</button>
+          <button id="removeTitle" class="control-btn">Remove Title</button>
+        </div>
+      </div>
+    </div>
+    <script src="AudioChanger.js"></script>
+  </body>
+</html>
