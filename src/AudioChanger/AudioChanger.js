@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Initialize audio player and control elements
   const audioPlayer = document.getElementById("audioPlayer");
   const playlist = document.getElementById("playlist");
   const currentTimeDisplay = document.getElementById("currentTime");
@@ -8,7 +9,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const addTitleButton = document.getElementById("addTitle");
   const removeTitleButton = document.getElementById("removeTitle");
 
+  // Track play state
   let isPlaying = false;
+  // Define playlist titles and metadata
   let titles = [
     {
       title: "Introduction to Resilience and Success",
@@ -54,6 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   ];
 
+  // Updates the playlist display with titles and descriptions
   function updatePlaylist() {
     playlist.innerHTML = "";
     titles.forEach((title, index) => {
@@ -78,10 +82,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Formats time in seconds to HH:MM:SS format
   function formatTime(seconds) {
     return new Date(seconds * 1000).toISOString().substr(11, 8);
   }
 
+  // Plays a specific segment of the audio
   function playSegment(start, end) {
     console.log("Playing segment", start, end);
     audioPlayer.currentTime = start;
@@ -90,6 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
     isPlaying = true;
     togglePlayButton.textContent = "Pause";
 
+    // Stops playback when the end of the segment is reached
     let playUntilEnd = setInterval(function () {
       if (audioPlayer.currentTime >= end || !isPlaying) {
         audioPlayer.pause();
@@ -98,6 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 1000);
   }
 
+  // Toggles play/pause state
   function togglePlay() {
     if (isPlaying) {
       audioPlayer.pause();
@@ -109,10 +117,12 @@ document.addEventListener("DOMContentLoaded", function () {
     isPlaying = !isPlaying;
   }
 
+  // Rewinds the audio by 5 seconds
   function rewind() {
     audioPlayer.currentTime = Math.max(0, audioPlayer.currentTime - 5);
   }
 
+  // Fast forwards the audio by 5 seconds
   function forward() {
     audioPlayer.currentTime = Math.min(
       audioPlayer.duration,
@@ -120,12 +130,14 @@ document.addEventListener("DOMContentLoaded", function () {
     );
   }
 
+  // Updates the current time display
   function updateCurrentTime() {
     currentTimeDisplay.textContent = new Date(audioPlayer.currentTime * 1000)
       .toISOString()
       .substr(14, 5);
   }
 
+  // Adds a new title to the playlist
   function addTitle() {
     let title = prompt("Enter title:");
     let start = audioPlayer.currentTime;
@@ -136,6 +148,7 @@ document.addEventListener("DOMContentLoaded", function () {
     updatePlaylist();
   }
 
+  // Removes the title currently being played from the playlist
   function removeTitle() {
     let currentTitleIndex = titles.findIndex(
       (title) =>
@@ -148,9 +161,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  // Initial playlist and current time update
   updatePlaylist();
   setInterval(updateCurrentTime, 1000);
 
+  // Event listeners for control buttons
   rewindButton.onclick = rewind;
   forwardButton.onclick = forward;
   togglePlayButton.onclick = togglePlay;
