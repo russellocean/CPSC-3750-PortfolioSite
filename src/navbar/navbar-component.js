@@ -29,6 +29,7 @@ class NavbarComponent extends HTMLElement {
               <a href="/src/hangman/hangman.html" data-page="hangman">Hangman</a>
               <a href="/src/Handlebars/handlebars.html" data-page="handlebars">Handlebars</a>
               <a href="/src/AudioChanger/AudioChanger.html" data-page="audio-changer">Audio Changer</a>
+              <a href="/src/zipcodes/index.html" data-page="zipcodes">Zipcodes</a> 
             </div>
           </li>
           <li><a href="mailto:russellwelch17@gmail.com" data-page="contact">Contact</a></li>

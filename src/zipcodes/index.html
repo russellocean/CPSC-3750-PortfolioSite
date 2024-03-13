@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Zipcode Distance</title>
+    <link rel="stylesheet" type="text/css" href="/src/styles.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <script src="/src/navbar/navbar-component.js" defer></script>
+  </head>
+  <header>
+    <custom-navbar current-page="zipcodes"></custom-navbar>
+  </header>
+  <body>
+    <header>
+      <h1>Zipcode Distance</h1>
+    </header>
+    <form name="debugMenu" id="debugMenu" action="">
+      <label for="debugMode">Debug Mode</label>
+      <input name="debugMode" type="checkbox" id="debugMode" />
+    </form>
+    <br />
+
+    <form id="zipcodeInput">
+      <label for="zip1">Zipcode 1</label>
+      <input name="zip1" type="number" id="zip1" />
+      <label for="zip2">Zipcode 2</label>
+      <input name="zip2" type="number" id="zip2" />
+
+      <button type="button" onclick="calculateDistance()">Calculate</button>
+    </form>
+
+    <div id="output"></div>
+  </body>
+</html>
