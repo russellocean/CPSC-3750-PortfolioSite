@@ -3,21 +3,27 @@
   <head>
     <title>AJAX Live Search Example</title>
     <script type="text/javascript" src="ajax.js"></script>
-   </head>
-   <body>
-     <h1>AJAX Live Search Example</h1>
+    <script src="/src/navbar/navbar-component.js" defer></script>
+  </head>
 
-     <p><strong>Search for:</strong>
-     <input type="text" size="40" id="searchlive"></p>
+  <header>
+    <custom-navbar current-page="livesearch"></custom-navbar>
+  </header>
 
-     <div id="results">
+  <body>
+    <h1>AJAX Live Search Example</h1>
 
+    <p>
+      <strong>Search for:</strong>
+      <input type="text" size="40" id="searchlive" />
+    </p>
+
+    <div id="results">
       <ul id="list">
-      <li>[Search results will display here.]</li>
+        <li>[Search results will display here.]</li>
       </ul>
+    </div>
 
-     </div>
-     
-     <script type="text/javascript" src="search.js"></script>
-   </body>
+    <script type="text/javascript" src="search.js"></script>
+  </body>
 </html>
