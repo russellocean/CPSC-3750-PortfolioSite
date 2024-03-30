@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number Checker</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="numberCheckerStyle.css" />
+    <script src="/src/navbar/navbar-component.js" defer></script>
+  </head>
+  <header>
+    <custom-navbar current-page="php-file"></custom-navbar>
+  </header>
+  <body>
+    <div class="container">
+      <h1>Number Checker</h1>
+      <form action="numberChecker.php" method="post">
+        <label for="numbers">Enter numbers (comma separated):</label>
+        <input type="text" id="numbers" name="numbers" required />
+        <button type="submit" name="action" value="check">
+          CHECK THESE NUMBERS
+        </button>
+      </form>
+      <div class="buttons">
+        <button onclick="displayNumbers('armstrong')">ARMSTRONG</button>
+        <button onclick="displayNumbers('fibonacci')">FIBONACCI</button>
+        <button onclick="displayNumbers('prime')">PRIME</button>
+        <button onclick="displayNumbers('none')">NONE</button>
+        <button onclick="resetApplication()">RESET</button>
+      </div>
+      <div id="output"></div>
+    </div>
+    <script src="numberChecker.js"></script>
+  </body>
+</html>
