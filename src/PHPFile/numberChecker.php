@@ -1,15 +1,15 @@
 <?php
-session_start();
+session_start(); // Start a new session or resume the existing one. This is essential for tracking user sessions and managing cookies.
 
 // Check if it's the user's first time using the app based on a cookie
 if (!isset($_COOKIE['first_visit'])) {
-    // Set a cookie to mark the user's first visit
+    // Set a cookie to mark the user's first visit. This helps in identifying new users and initializing necessary files for them.
     setcookie('first_visit', '1', time() + (86400 * 30), "/"); // 86400 = 1 day
 
     // File names to be created
     $files = ['prime.txt', 'armstrong.txt', 'fibonacci.txt', 'none.txt'];
 
-    // Create each file if it doesn't already exist
+    // Create each file if it doesn't already exist. This is to store numbers based on their mathematical properties.
     foreach ($files as $file) {
         $filePath = __DIR__ . '/../PHPFile/' . $file;
         if (!file_exists($filePath)) {
@@ -29,7 +29,7 @@ function isPrime($number) {
             return false;
         }
     }
-    return true;
+    return true; // A number is prime if it is greater than 1 and has no divisors other than 1 and itself.
 }
 
 // Function to check if a number is Armstrong
@@ -40,7 +40,7 @@ function isArmstrong($number) {
     for ($i = 0; $i < $length; $i++) {
         $sum += pow((int)$numberStr[$i], $length);
     }
-    return $sum == $number;
+    return $sum == $number; // A number is Armstrong if the sum of its own digits each raised to the power of the number of digits is equal to the number itself.
 }
 
 // Function to check if a number is Fibonacci
@@ -57,13 +57,13 @@ function isFibonacci($number) {
 // Function to add number to file
 function addNumberToFile($number, $fileName) {
     $filePath = __DIR__ . '/../PHPFile/' . $fileName;
-    file_put_contents($filePath, $number . PHP_EOL, FILE_APPEND);
+    file_put_contents($filePath, $number . PHP_EOL, FILE_APPEND); // Adds a number to the specified file, appending it to any existing content.
 }
 
 // Function to get numbers from file
 function getNumbersFromFile($fileName) {
     $filePath = __DIR__ . '/../PHPFile/' . $fileName;
-    return file_get_contents($filePath);
+    return file_get_contents($filePath); // Retrieves numbers stored in the specified file.
 }
 
 // Function to reset the application
@@ -76,7 +76,7 @@ function resetApplication() {
         }
     }
     // Clear the cookie
-    setcookie('first_visit', '', time() - 3600, "/");
+    setcookie('first_visit', '', time() - 3600, "/"); // Resets the application by clearing the first_visit cookie and deleting all files.
 }
 
 // Handle form submission
@@ -124,6 +124,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             echo 'Application reset. Please refresh the page.';
             break;
     }
-    exit;
+    exit; // Terminate the script to prevent further execution after form submission handling.
 }
 ?>
