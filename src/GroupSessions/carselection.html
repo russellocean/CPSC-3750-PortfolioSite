@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Car Selection Page</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+    <script src="/src/navbar/navbar-component.js" defer></script>
+  </head>
+  <header>
+    <custom-navbar current-page="group-sessions"></custom-navbar>
+  </header>
+  <body>
+    <h1>Car Selection Page</h1>
+    <form method="post" action="carselection.php">
+      <label for="cars">Select cars:</label><br />
+      <select id="cars" name="cars[]" multiple="multiple" size="7">
+        <option value="Toyota Camry">Toyota Camry</option>
+        <option value="Honda Accord">Honda Accord</option>
+        <option value="Ford Fusion">Ford Fusion</option>
+        <option value="Chevrolet Malibu">Chevrolet Malibu</option>
+        <option value="Nissan Altima">Nissan Altima</option>
+        <option value="Hyundai Sonata">Hyundai Sonata</option>
+        <option value="Kia Optima">Kia Optima</option></select
+      ><br />
+      <button type="submit" name="submit" value="submit">
+        Submit Selection
+      </button>
+    </form>
+  </body>
+</html>

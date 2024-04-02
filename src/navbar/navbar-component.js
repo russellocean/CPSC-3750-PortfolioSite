@@ -33,6 +33,7 @@ class NavbarComponent extends HTMLElement {
               <a href="/src/LiveSearch/livesearch.html" data-page="livesearch">Live Search</a>
               <a href="/src/PHPFile/numberChecker.html" data-page="php-file">PHP File</a>
               <a href="/src/DMMTExamples/DMMTExamples.html" data-page="dmmt-examples">DMMT Examples</a>
+              <a href="/src/GroupSessions/carselection.html" data-page="group-sessions">Group Sessions</a>
             </div>
           </li>
           <li><a href="mailto:russellwelch17@gmail.com" data-page="contact">Contact</a></li>
