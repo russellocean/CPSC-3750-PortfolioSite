@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Example</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+    <script src="/src/navbar/navbar-component.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <custom-navbar current-page="group-form"></custom-navbar>
+    </header>
+    <h1>Form Elements Example</h1>
+    <form action="process.php" method="post" enctype="multipart/form-data">
+      <label for="text">Text:</label>
+      <input type="text" id="text" name="text" /><br /><br />
+
+      <label for="textarea">Textarea:</label>
+      <textarea id="textarea" name="textarea"></textarea><br /><br />
+
+      <input type="hidden" name="hiddenData" value="Some hidden data" /><br />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" /><br /><br />
+
+      <fieldset>
+        <legend>Array of Checkboxes (Select multiple):</legend>
+        <input
+          type="checkbox"
+          id="checkbox1"
+          name="checkboxArray[]"
+          value="Option 1"
+        />
+        <label for="checkbox1">Option 1</label><br />
+        <input
+          type="checkbox"
+          id="checkbox2"
+          name="checkboxArray[]"
+          value="Option 2"
+        />
+        <label for="checkbox2">Option 2</label><br />
+        <input
+          type="checkbox"
+          id="checkbox3"
+          name="checkboxArray[]"
+          value="Option 3"
+        />
+        <label for="checkbox3">Option 3</label><br />
+      </fieldset>
+      <br />
+
+      <fieldset>
+        <legend>Radio Buttons:</legend>
+        <input type="radio" id="radio1" name="radio" value="Radio 1" />
+        <label for="radio1">Radio 1</label><br />
+        <input type="radio" id="radio2" name="radio" value="Radio 2" />
+        <label for="radio2">Radio 2</label><br />
+      </fieldset>
+      <br />
+
+      <label for="selectionList">Selection List:</label>
+      <select id="selectionList" name="selectionList">
+        <option value="Option A">Option A</option>
+        <option value="Option B">Option B</option>
+        <option value="Option C">Option C</option></select
+      ><br /><br />
+
+      <label for="file">File:</label>
+      <input type="file" id="file" name="file" /><br /><br />
+
+      <label for="url">URL:</label>
+      <input type="url" id="url" name="url" /><br /><br />
+
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
