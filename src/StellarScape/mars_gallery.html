@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mars Gallery - StellarScape</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>StellarScape</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="mars_gallery.html">Mars Gallery</a></li>
+          <li><a href="stats.html">Stats</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="marsGallery">
+        <h2>Curiosity Rover's Martian Photo Album</h2>
+        <p>
+          Embark on a visual journey with Curiosity, NASA's most famous Mars
+          rover, as it explores the Red Planet! By entering a Martian Sol (a day
+          on Mars), you can discover stunning photos captured by Curiosity. Sol
+          starts from 0, marking the rover's grand touchdown on Mars, and spans
+          to its latest adventures. Fancy seeing what Curiosity was up to on its
+          1000th day? Just type in Sol 1000 and prepare to be amazed by the
+          snapshots of Martian landscapes and curiosities uncovered by this
+          intrepid explorer.
+        </p>
+        <form id="searchForm">
+          <label for="sol">Martian Sol:</label>
+          <input type="number" id="sol" name="sol" min="0" />
+          <button type="submit">Search</button>
+        </form>
+        <div id="photoResults"></div>
+        <div id="pagination"></div>
+      </section>
+    </main>
+    <script src="mars_gallery.js"></script>
+  </body>
+</html>
