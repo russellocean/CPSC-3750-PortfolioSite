@@ -116,3 +116,26 @@ h2 {
     margin-top: 10px;
   }
 }
+/* Rover Info Styles */
+#roverInfo {
+  background-color: #161b22;
+  color: #c9d1d9;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
+}
+
+/* Style the footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #161b22;
+  color: #c9d1d9;
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(88, 166, 255, 0.5);
+}
