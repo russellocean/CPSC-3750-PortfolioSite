@@ -8,20 +8,33 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentRover = roverSelect.value;
   let currentSol = 0;
 
+  async function fetchWithRetry(url, attempts = 3) {
+    function onError(err) {
+      const isRetryError = err.status === 429; // Too many requests
+      if (isRetryError && attempts > 0) {
+        console.log(`Retrying... Attempts left: ${attempts}`);
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            resolve(fetchWithRetry(url, attempts - 1));
+          }, 3000); // Wait for 3 seconds before retrying
+        });
+      }
+      return Promise.reject(err);
+    }
+
+    return fetch(url)
+      .then((response) => {
+        if (!response.ok) throw response;
+        return response.json();
+      })
+      .catch(onError);
+  }
+
   function fetchRoverData(rover) {
-    fetch(
-      `https://api.nasa.gov/mars-photos/api/v1/manifests/${rover}?api_key=${apiKey}`
-    )
-      .then((response) => response.json())
+    const url = `https://api.nasa.gov/mars-photos/api/v1/manifests/${rover}?api_key=${apiKey}`;
+    fetchWithRetry(url)
       .then((data) => {
         const roverData = data.photo_manifest;
-        console.log(`Rover Name: ${roverData.name}`);
-        console.log(`Landing Date: ${roverData.landing_date}`);
-        console.log(`Launch Date: ${roverData.launch_date}`);
-        console.log(`Status: ${roverData.status}`);
-        console.log(`Max Sol: ${roverData.max_sol}`);
-        console.log(`Max Date: ${roverData.max_date}`);
-        console.log(`Total Photos: ${roverData.total_photos}`);
         // Display rover information on the page
         const roverInfo = document.getElementById("roverInfo");
         roverInfo.innerHTML = `
@@ -42,8 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function fetchAndDisplayPhotos(rover, sol) {
     const roverPhotosUrl = `https://api.nasa.gov/mars-photos/api/v1/rovers/${rover}/photos?sol=${sol}&page=${currentPage}&api_key=${apiKey}`;
     console.log("Fetching Mars Rover Photos:", roverPhotosUrl);
-    fetch(roverPhotosUrl)
-      .then((response) => response.json())
+    fetchWithRetry(roverPhotosUrl)
       .then((data) => {
         displayPhotos(data);
         setupPagination(data.photos.length);
