@@ -36,6 +36,7 @@ class NavbarComponent extends HTMLElement {
               <a href="/src/GroupSessions/carselection.html" data-page="group-sessions">Group Sessions</a>
               <a href="/src/GroupForm/form.html" data-page="group-form">Group Form</a>
               <a href="/src/StellarScape/index.html" data-page="stellar-scape">Stellar Scape</a>
+              <a href="/src/CreateDB/create_person.php" data-page="create-db">Create DB</a>
             </div>
           </li>
           <li><a href="mailto:russellwelch17@gmail.com" data-page="contact">Contact</a></li>
