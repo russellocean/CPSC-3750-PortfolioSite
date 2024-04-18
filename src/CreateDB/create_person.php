@@ -9,6 +9,35 @@ function test_input($data) {
   return $data;
 }
 
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Person Record</title>
+    <link rel="stylesheet" type="text/css" href="/src/styles.css" />
+    <script src="/src/navbar/navbar-component.js" defer></script>
+</head>
+<body>
+<header>
+  <custom-navbar current-page="create-db"></custom-navbar>
+</header>
+    <h2>Enter Person Details</h2>
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+        First Name: <input type="text" name="first_name" required><br>
+        Last Name: <input type="text" name="last_name" required><br>
+        Email Address: <input type="email" name="email_address" required><br>
+        <input type="submit" name="submit" value="Submit">
+    </form>
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+        <input type="submit" name="display_records" value="Display Records">
+    </form>
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+        Search by Last Name: <input type="text" name="search_term" required>
+        <input type="submit" name="search" value="Search">
+    </form>
+
+<?php
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if(isset($_POST["submit"])) {
@@ -65,30 +94,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $conn->close();
 ?>
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Create Person Record</title>
-<script src="/src/navbar/navbar-component.js" defer></script>
-</head>
-<header>
-  <custom-navbar current-page="create-db"></custom-navbar>
-</header>
-<body>
-    <h2>Enter Person Details</h2>
-    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-        First Name: <input type="text" name="first_name" required><br>
-        Last Name: <input type="text" name="last_name" required><br>
-        Email Address: <input type="email" name="email_address" required><br>
-        <input type="submit" name="submit" value="Submit">
-    </form>
-    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-        <input type="submit" name="display_records" value="Display Records">
-    </form>
-    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-        Search by Last Name: <input type="text" name="search_term" required>
-        <input type="submit" name="search" value="Search">
-    </form>
 </body>
 </html>
+
