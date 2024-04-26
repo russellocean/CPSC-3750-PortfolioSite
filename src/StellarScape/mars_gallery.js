@@ -102,8 +102,47 @@ document.addEventListener("DOMContentLoaded", function () {
         cameraInfo.style.maxWidth = "200px";
         cameraInfo.style.textAlign = "center";
 
+        const addToFavoritesButton = document.createElement("button");
+        addToFavoritesButton.textContent = "Add to Favorites";
+        addToFavoritesButton.onclick = function () {
+          console.log("Attempting to add photo to favorites:", photo.id);
+          console.log("Photo:", photo.img_src, photo.camera.full_name);
+          fetch("add_to_favorites.php", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              photoId: photo.id,
+              cameraFullName: photo.camera.full_name,
+              imgSrc: photo.img_src,
+            }),
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.success) {
+                console.log("Photo added to favorites successfully:", photo.id);
+              } else {
+                console.error(
+                  "Failed to add photo to favorites:",
+                  photo.id,
+                  data.error
+                );
+              }
+            })
+            .catch((error) => {
+              console.error(
+                "Error adding photo to favorites:",
+                error,
+                "Photo ID:",
+                photo.id
+              );
+            });
+        };
+
         photoContainer.appendChild(imgElement);
         photoContainer.appendChild(cameraInfo);
+        photoContainer.appendChild(addToFavoritesButton);
         photosContainer.appendChild(photoContainer);
       });
       photoResults.appendChild(photosContainer);
